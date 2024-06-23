@@ -1,0 +1,31 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "Animix Discord RPC",
+  "version": "1.0.0",
+  "description": "Расширение для отображения активности на вебсайте Animix.lol в статусе Discord RP. Основано на Discord-RPC-Extension. С любовью, от trixiepon!",
+  "background": {
+    "scripts": [
+      "extensionId.js",
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png",
+    "512": "icons/icon512.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["extensionId.js", "main.js"],
+      "matches": ["*://*.animix.lol/*", "*://animix.lol/*"]
+    }
+  ],
+  "externally_connectable": {
+    "ids": ["*"]
+  }
+}
